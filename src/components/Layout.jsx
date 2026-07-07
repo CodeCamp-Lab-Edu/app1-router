@@ -1,8 +1,9 @@
 import { NavLink, Outlet } from "react-router";
+import "./Layout.css";
 
 function Layout() {
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="layout-container">
       <header>
         <h1>My Website</h1>
       </header>
@@ -10,15 +11,17 @@ function Layout() {
       <nav>
         <NavLink to="/">Home</NavLink> |&nbsp;
         <NavLink to="/about">About</NavLink> |&nbsp;
-        <NavLink to="/contact">Contact</NavLink>
+        <NavLink to="/contact">Contact</NavLink> |&nbsp;
+        <NavLink to="/product">Product</NavLink>
       </nav>
+
       <hr />
 
-      <Outlet />
+      <main className="layout-content">
+        <Outlet />
+      </main>
 
-      <footer>
-        footer
-      </footer>
+      <footer>footer</footer>
     </div>
   );
 }
