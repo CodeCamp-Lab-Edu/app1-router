@@ -1,0 +1,20 @@
+ul {
+  text-align: left;
+  list-style: none;
+}
+
+ul li {
+  padding: 5px 40px;
+}
+
+ul li img {
+  width: 150px;
+}
+
+h3 {
+  padding: 20px;
+}
+
+ul li img:hover {
+  transform: scale(1.2);
+}

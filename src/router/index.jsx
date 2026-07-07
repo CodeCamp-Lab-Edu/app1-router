@@ -3,7 +3,8 @@ import HomePage from "../pages/HomePage";
 import AboutPage from "../pages/AboutPage";
 import ContactPage from "../pages/Contact";
 import Layout from "../components/Layout";
-import ProductPage from "../pages/ProductPage";
+import NotFoundPage from "../pages/NotFoundPage";
+import { productRoutes } from "./product.router";
 
 const router = createBrowserRouter([
   {
@@ -19,9 +20,10 @@ const router = createBrowserRouter([
         path: "/contact",
         Component: ContactPage,
       },
+      productRoutes,
       {
-        path: "/product",
-        Component: ProductPage
+        path: "*",
+        Component: NotFoundPage
       }
     ],
   },

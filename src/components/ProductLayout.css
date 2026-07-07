@@ -1,0 +1,6 @@
+.content {
+    box-shadow: 5px 10px salmon;
+    min-height: 100px;
+    border: 1px dotted salmon;
+    margin: 20px;
+}

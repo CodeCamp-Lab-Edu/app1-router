@@ -1,7 +1,11 @@
-import { NavLink, Outlet } from "react-router";
+import { NavLink, Outlet, useNavigation, useLocation } from "react-router";
 import "./Layout.css";
 
 function Layout() {
+  const navigation = useNavigation();
+  const isLoading = navigation.state === "loading";
+  const location = useLocation();
+
   return (
     <div className="layout-container">
       <header>
@@ -18,7 +22,13 @@ function Layout() {
       <hr />
 
       <main className="layout-content">
-        <Outlet />
+        {isLoading ? (
+          <div>กำลังโหลดข้อมูล...</div>
+        ) : (
+          <div key={location.pathname} className="fade-in">
+            <Outlet />
+          </div>
+        )}
       </main>
 
       <footer>footer</footer>
